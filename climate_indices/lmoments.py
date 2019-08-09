@@ -76,7 +76,7 @@ def _estimate_pearson3_parameters(lmoments: np.ndarray) -> dict:
     # the first Pearson Type III parameter is the same as the first L-moment
     loc = lmoments[0]
     # pearson3_parameters = np.zeros((3,))
-
+    skew = t3 # initalise skew 
     # # the first Pearson Type III parameter is the same as the first L-moment
     # pearson3_parameters[0] = lmoments[0]
 
@@ -109,7 +109,7 @@ def _estimate_pearson3_parameters(lmoments: np.ndarray) -> dict:
 
     # return pearson3_parameters
     return {"loc": loc, "skew": skew, "scale": scale}
-
+    
 
 # ------------------------------------------------------------------------------
 @numba.jit
